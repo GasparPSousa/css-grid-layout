@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-radius: 5px;
+    --main-padding: 5px;
+}
+
+.container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 1.5fr 1.2fr 0.3fr;
+    grid-template-areas: 
+        "nav nav nav nav"
+        "sidebar main main main"
+        "sidebar content1 content2 content3"
+        "sidebar footer footer footer";
+    gap: 0.2rem;
+    font-family: "Inter", sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.5);
+    
+}
+
+nav {
+    background-color: aquamarine;
+    grid-area: nav;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+main {
+    background-color: green;
+    grid-area: main;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+.sidebar {
+    background-color: blueviolet;
+    grid-area: sidebar;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+#content1 {
+    background-color: brown;
+    grid-area: content1;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+#content2 {
+    background-color: blue;
+    grid-area: content2;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+#content3 {
+    background-color:red;
+    grid-area: content3;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+footer {
+    background-color: gray;
+    grid-area: footer;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+nav, .sidebar, main, #content1, #content2, #content3, footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media only screen and (max-width:650px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
+        grid-template-areas: 
+            "nav"
+            "sidebar"
+            "main"
+            "content1"
+            "content2"
+            "content3"
+            "footer";
+        gap: 0.05rem;
+    }
+
+    :root {
+        --main-radius: 2px;
+        --main-padding: 2px;
+    }
+}
